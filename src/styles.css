@@ -2,3 +2,29 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body {
+  /* https://uigradients.com/#PiggyPink */
+  background: #ee9ca7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #575656;
+  font-family: "Roboto", sans-serif;
+}
+
+input {
+  background: border-box;
+  color: #ffdde1;
+  border-top: none;
+  border-left: none;
+  width: 200px;
+  padding:5px;
+}
