@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
+import Todo from "./Todo";
 
 const TodoList = ({todos}) =>{
   return(
-    <div>
+    <div style={{
+      display: "flex", 
+      flexDirection: "column",
+      }}>
       {
         todos.map((todo,i) => ( 
-          <h1>{todo}</h1>
+          <Todo todo={todo} />
         ))}
     </div>
   );

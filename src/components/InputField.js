@@ -15,12 +15,14 @@ class InputField extends React.Component {
     e.preventDefault();
     // Change dispatch to a props and the prop name is addTodo
     this.props.addTodo(this.state.todo);
+    this.setState({todo:""});
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <input type="text" 
                name="todo" 
+               value={this.state.todo}
                placeholder="Enter your todo..." 
                onChange={this.handleChange}
         />
