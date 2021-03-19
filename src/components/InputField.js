@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { addTodo } from '../redux/action/addTodo.action'; 
 
 class InputField extends React.Component {
   state = {
