@@ -8,9 +8,13 @@ class InputField extends React.Component {
   handleChange = e => this.setState({
     todo: e.target.value
   });
+
+  handleSubmit = e =>{
+    e.preventDefault();
+  }
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input type="text" 
                name="todo" 
                placeholder="Enter your todo..." 
