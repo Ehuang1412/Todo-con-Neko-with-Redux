@@ -10,8 +10,8 @@ const TodoList = ({todos}) =>{
       }}>
       {
         todos.map((todo,i) => ( 
-          <Todo todo={todo} />
-        ))}
+          <Todo key={i} todo={todo} idx={i} />
+      ))}
     </div>
   );
 };
