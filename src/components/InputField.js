@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 
 class InputField extends React.Component {
   state = {
@@ -11,6 +12,8 @@ class InputField extends React.Component {
 
   handleSubmit = e =>{
     e.preventDefault();
+    // Change dispatch to a props and the prop name is addTodo
+    this.props.addTodo(this.state.todo);
   }
   render() {
     return (
@@ -25,4 +28,7 @@ class InputField extends React.Component {
   }
 }
 
-export default InputField;
+const mapDispatchToProps = dispatch =>({
+  addTodo : todo => dispatch(addTodo(todo))
+})
+export default connect(null, mapDispatchToProps)(InputField);
