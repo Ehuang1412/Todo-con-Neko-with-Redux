@@ -3,8 +3,12 @@ import InputField from "./components/InputField";
 import TodoList from './components/TodoList';
 import { connect } from 'react-redux'
 import { deleteAll } from "./redux/action/addTodo.action";
+import { useEffect } from "react";
 
 const App = ({deleteAll}) => {
+  useEffect(() => {
+
+  },[])
   return (
     <div className="App">
       What I Get to Do Today 
