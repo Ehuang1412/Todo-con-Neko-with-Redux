@@ -28,3 +28,9 @@ input {
   width: 200px;
   padding:5px;
 }
+
+button{
+  background: content-box;
+  /* background-color:#ffdde1; */
+
+}

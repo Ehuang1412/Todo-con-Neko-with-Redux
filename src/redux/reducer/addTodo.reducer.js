@@ -14,13 +14,25 @@ export const addTodo = (state = initState, action) => {
         todos: state.todos.filter((todo,i) => i !== action.payload)
       };
     case 'EDIT_TODO':
-      return {...state, text: state.todos[action.payload], selected: action.payload}
+      return {
+        ...state, 
+        text: state.todos[action.payload], 
+        selected: action.payload 
+      }
     case 'ADD_TEXT':
-      return {...state, text: action.payload}
+      return {
+        ...state, 
+        text: action.payload
+      }
     case 'EDIT_ADD_TODO':
-      return {...state, 
-        todos:state.todos.map((todo,i) => i!==state.payload.selected ? todo : action.payload.value),
-        selected:undefined}
+      return {
+        ...state, 
+        todos: state.todos.map((todo,i) =>
+          i!==action.payload.selected ? todo : action.payload.value
+        ),
+        selected: undefined,
+        text: ""
+      };
     default:
       return state;
   }

@@ -7,6 +7,11 @@ const TodoList = ({todos}) =>{
     <div style={{
       display: "flex", 
       flexDirection: "column",
+      width: "200px",
+      margin: "0 auto",
+      height: "200px",
+      overflowY: "auto",
+      overflowX: "hidden"
       }}>
       {
         todos.map((todo,i) => ( 

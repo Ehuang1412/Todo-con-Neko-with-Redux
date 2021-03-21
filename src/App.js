@@ -8,7 +8,9 @@ export default function App() {
       What I Get to Do Today 
       <InputField />
       <TodoList/>
-      
+      <div>
+        <button> Delete All </button>
+      </div>
     </div>
   );
 }

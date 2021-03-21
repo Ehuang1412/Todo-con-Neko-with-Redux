@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteTodo, editTodo } from "../redux/action/addTodo.action";
 
-const Todo = ({todo, idx, deleteTodo, editTodo}) => {
+const Todo = ({todo, idx, deleteTodo, editTodo, selected, text }) => {
 
   return(
     <div style={{
@@ -13,7 +13,7 @@ const Todo = ({todo, idx, deleteTodo, editTodo}) => {
       padding: '5px',
       cursor:'pointer'
       }}>
-      <div onClick={() => editTodo(idx)}>{todo}</div>
+      <div onClick={() => editTodo(idx)}>{selected===idx?text:todo}</div>
       <div style={{cursor:'pointer'}} 
            onClick={()=>deleteTodo(idx)}> x </div>
     </div>
@@ -23,5 +23,10 @@ const mapDispatchToProps = dispatch => ({
   deleteTodo: key => dispatch(deleteTodo(key)),
   editTodo: key => dispatch(editTodo(key))
 });
+
+const mapStateToProps = state => ({
+  text: state.text,
+  selected: state.selected
+})
 // Create some actions
-export default connect(null,mapDispatchToProps)(Todo);
+export default connect(mapStateToProps,mapDispatchToProps)(Todo);
