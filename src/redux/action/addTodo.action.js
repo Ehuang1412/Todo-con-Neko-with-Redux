@@ -17,3 +17,8 @@ export const addText = value =>({
   type: 'ADD_TEXT',
   payload: value
 })
+
+export const editAddTodo = obj => ({
+  type: 'EDIT_ADD_TODO',
+  payload: obj
+})

@@ -15,7 +15,7 @@ class InputField extends React.Component {
   handleSubmit = e =>{
     e.preventDefault();
     // Change dispatch to a props and the prop name is addTodo
-    this.props.addTodo(this.state.text);
+    this.props.addTodo(this.props.text);
     // this.setState({todo:""});
   }
   render() {
@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch =>({
 });
 // get state of text
 const mapStateToProps = state => ({
-  text: state.text
+  text: state.text,
+  selectd: state.selected
 })
 export default connect(mapStateToProps, mapDispatchToProps)(InputField);
