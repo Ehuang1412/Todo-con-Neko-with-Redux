@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { addTodo,  addText, editAddTodo } from '../redux/action/addTodo.action'; 
 
-class InputField extends React.Component {
+const InputField = ({addText, addTodo, text, selected}) => {
   // state = {
   //   todo:'',
   // } We change the state with the reducer
@@ -10,35 +10,35 @@ class InputField extends React.Component {
   // handleChange = e => this.setState({
   //   todo: e.target.value
   // });
-  handleChange = e => this.props.addText(e.target.value);
+  const handleChange = e => addText(e.target.value);
 
-  handleSubmit = e =>{
+  const handleSubmit = e =>{
     e.preventDefault();
-    if( this.props.selected || this.props.selected === 0)//{
-      this.props.editAddTodo({
-        value: this.props.text,
-        selected: this.props.selected
+    if( selected || selected === 0)//{
+      editAddTodo({
+        value: text,
+        selected: selected
       });
     //}
     else//{
       // Change dispatch to a props and the prop name is addTodo
-      this.props.addTodo(this.props.text);
+      addTodo(text);
       // this.setState({todo:""});
    //}
     
   };
-  render() {
+  
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type="text" 
                name="todo" 
-               value={this.props.text}
+               value={text}
                placeholder="Enter your todo..." 
-               onChange={this.handleChange}
+               onChange={handleChange}
         />
       </form>
     );
-  }
+  
 }
 
 const mapDispatchToProps = dispatch =>({
