@@ -48,7 +48,7 @@ const mapDispatchToProps = dispatch =>({
 });
 // get state of text
 const mapStateToProps = ({text, selected})=> ({
-  text: text,
-  selected: selected,
+  text,
+  selected,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(InputField);
