@@ -47,8 +47,8 @@ const mapDispatchToProps = dispatch =>({
   editAddTodo : obj => dispatch(editAddTodo(obj))
 });
 // get state of text
-const mapStateToProps = state => ({
-  text: state.text,
-  selected: state.selected,
+const mapStateToProps = ({text, selected})=> ({
+  text: text,
+  selected: selected,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(InputField);
