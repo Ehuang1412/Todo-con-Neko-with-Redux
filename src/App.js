@@ -9,7 +9,7 @@ export default function App() {
       <InputField />
       <TodoList/>
       <div>
-        <button> Delete All </button>
+        <button style={{marginTop:'20px', cursor:'pointer'}}> Delete All </button>
       </div>
     </div>
   );
