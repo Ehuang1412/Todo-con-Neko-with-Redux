@@ -2,13 +2,13 @@ import "./styles.css";
 import InputField from "./components/InputField";
 import TodoList from './components/TodoList';
 import { connect } from 'react-redux'
-import { deleteAll } from "./redux/action/addTodo.action";
+import { deleteAll, persistTodos } from "./redux/action/addTodo.action";
 import { useEffect } from "react";
 
-const App = ({deleteAll}) => {
+const App = ({deleteAll, persistTodos}) => {
   useEffect(() => {
-
-  },[])
+    persistTodos();
+  },[persistTodos])
   return (
     <div className="App">
       What I Get to Do Today 
@@ -24,7 +24,8 @@ const App = ({deleteAll}) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  deleteAll : () => dispatch(deleteAll())
+  deleteAll : () => dispatch(deleteAll()),
+  persistTodos: () => dispatch(persistTodos())
 })
 
 export default connect(null, mapDispatchToProps)(App);
