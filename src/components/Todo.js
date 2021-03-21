@@ -10,7 +10,8 @@ const Todo = ({todo, idx, deleteTodo}) => {
       flexDirection:'row', 
       justifyContent:'space-between',
       border: '1px solid #ffdde1',
-      padding: '5px'
+      padding: '5px',
+      cursor:'pointer'
       }}>
       <div>{todo}</div>
       <div style={{cursor:'pointer'}} 

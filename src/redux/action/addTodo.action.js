@@ -7,3 +7,13 @@ export const deleteTodo = key => ({
   type: "DELETE_TODO",
   payload: key
 })
+
+export const editTodo = key => ({
+  type: 'EDIT_TODO',
+  payload: key
+})
+
+export const addText = value =>({
+  type: 'ADD_TEXT',
+  payload: value
+})
